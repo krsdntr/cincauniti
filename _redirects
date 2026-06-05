@@ -1,0 +1,5 @@
+# Cloudflare Pages Redirects
+# Redirect common URL variants to canonical
+
+/index.html  /  301
+/home        /  301

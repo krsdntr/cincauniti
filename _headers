@@ -1,0 +1,30 @@
+# Cloudflare Pages Headers Configuration
+# Optimized for Edge Runtime, Security & Performance
+
+/*
+  X-Frame-Options: DENY
+  X-Content-Type-Options: nosniff
+  X-XSS-Protection: 1; mode=block
+  Referrer-Policy: strict-origin-when-cross-origin
+  Permissions-Policy: camera=(), microphone=(), geolocation=()
+  Content-Security-Policy: default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; frame-src https://maps.google.com https://www.google.com; connect-src 'self'
+
+# HTML pages — no cache (always fresh)
+/*.html
+  Cache-Control: public, max-age=0, must-revalidate
+
+# CSS & JS — long cache with immutable
+/css/*
+  Cache-Control: public, max-age=31536000, immutable
+
+/js/*
+  Cache-Control: public, max-age=31536000, immutable
+
+# Images — long cache
+/images/*
+  Cache-Control: public, max-age=2592000
+
+# Fonts (if self-hosted)
+/fonts/*
+  Cache-Control: public, max-age=31536000, immutable
+  Access-Control-Allow-Origin: *

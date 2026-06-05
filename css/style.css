@@ -1657,6 +1657,9 @@ a.contact-item:hover {
   overflow: hidden;
   box-shadow: var(--sh-lg);
   height: 420px;
+  transform: translateZ(0);
+  -webkit-transform: translateZ(0);
+  isolation: isolate;
 }
 .map-wrap iframe { width: 100%; height: 100%; border: none; display: block; }
 

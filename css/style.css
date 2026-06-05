@@ -1567,7 +1567,6 @@ p  { font-size: var(--text-base); line-height: 1.75; color: var(--text-secondary
 /* Card side */
 .reseller-card {
   background: rgba(255,255,255,0.06);
-  backdrop-filter: blur(12px);
   border: 1px solid rgba(255,255,255,0.12);
   border-radius: var(--r-2xl);
   padding: var(--s-9);
@@ -1653,11 +1652,12 @@ a.contact-item:hover {
 .contact-ctas { display: flex; flex-wrap: wrap; gap: var(--s-3); margin-top: var(--s-6); }
 
 .map-wrap {
-  height: 420px;
-  background: #f0f0f0;
+  display: none; /* Sembunyikan sepenuhnya di mobile untuk mencegah GPU crash */
 }
 @media (min-width: 900px) {
   .map-wrap {
+    display: block;
+    height: 420px;
     border-radius: var(--r-2xl);
     overflow: hidden;
     box-shadow: var(--sh-lg);
